@@ -18,13 +18,16 @@ from django.urls import path
 from django.conf import settings
 from maxx_ai import views
 from django.conf.urls.static import static
+from django.urls import path
 
 urlpatterns = [
     path('', views.home, name="home"),
     path('upload/', views.upload_view),
-    path('upload/go/', views.upload_file),
+    path('upload/go/', views.get_file),
     path('admin/', admin.site.urls),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    
+    

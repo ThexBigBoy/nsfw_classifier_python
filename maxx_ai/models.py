@@ -9,7 +9,8 @@ class Image(models.Model):
 
 
 class UploadedFile(models.Model):
-    file = models.FileField(upload_to='uploads/photos', default='null')
+    # file = models.FileField(upload_to='uploads/photos', default='null')
+    file = models.FileField(default='null')
     # video = models.FileField(upload_to='uploads/videos', default='null')
     desc = models.CharField(max_length=200)
     

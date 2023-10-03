@@ -11,14 +11,16 @@ app = Flask(__name__)
 
 @app.route('/result', methods=['GET'])
 def process_results(result_list):
-    print("Hello")
-    # for filename, result in result_list:
-    #     print("Filename:", filename)
-    #     print("Result:", result)
-
-    #     employees = [
-    #         {'result': result, 'filename': filename},
-    #     ]
+    print("Hi")
+    res = []
+    for filename, result in result_list:
+        res.append((filename, result))
+        
+        # employees = [
+        #     {'result': result, 'filename': filename},
+        # ]
+    json_numbers = json.dumps(res)
+    print(json_numbers)
     return "File processed successfully!"
 
 # employees = [
